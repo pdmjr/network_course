@@ -1,0 +1,98 @@
+\documentclass[10pt,xcolor=table]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage{hyperref}
+\usepackage{tikz}
+% \usetikzlibrary{calc,decorations.pathreplacing,snakes}
+\usetikzlibrary{calc,decorations.pathreplacing}
+\usepackage{multicol}
+\usepackage{comment}
+% \usepackage[portuguese]{babel}
+% \usepackage[style=authortitle,backend=bibtex]{biblatex}
+\usepackage[style=authortitle,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\usepackage{subfig}
+\usepackage{csquotes}
+
+\hypersetup{colorlinks=true,linkcolor=,urlcolor=blue}
+
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+
+\newcommand{\hideFromPandoc}[1]{#1}
+\hideFromPandoc{
+  \let\Begin\begin
+  \let\End\end
+}
+
+\newcommand{\verbatimfont}[1]{\renewcommand{\verbatim@font}{\ttfamily#1}}
+
+\newcommand{\PR}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\PC}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\chav}[1]{\ensuremath{\left\{#1\right\}}}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfpages} % for multiple-screen presentations
+% \setbeameroption{show notes on second screen}
+% \setbeameroption{show notes on second screen=right} % Both
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\setbeamertemplate{frame footer}{\includegraphics[height=0.65cm]{figs/ifpb.png}}
+
+\setbeamercolor{background canvas}{bg=white}
+
+% \setbeamertemplate{sections/subsections in toc}[ball]
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[ball unnumbered]
+\setbeamerfont{footnote}{size=\scriptsize}
+
+% \renewcommand{\footnotesize}{\small}
+% \renewcommand*{\bibfont}{\tiny}
+
+% Main slide
+\title{Fundamentals of Computer \\ Networks}
+\date{\today}
+\author{\textbf{Prof. Dr. Paulo Ditarso Maciel Jr. (\href{mailto:paulo.maciel@ifpb.edu.br}{paulo.maciel@ifpb.edu.br})}}
+\institute{
+\centering
+\normalsize
+\vspace{0.5cm}
+{\Large \textbf{Course Presentation}}\\
+\vspace{2cm}
+{\scriptsize
+\texttt{\$ git clone \href{https://github.com/pdmjr/network_course.git}{https://github.com/pdmjr/network\_course.git}}
+}
+}
+
+\titlegraphic{\hfill\includegraphics[height=1.7cm]{figs/ifpb.png}}
+
+\begin{document}
+
+\maketitle
+
+\setbeamertemplate{headline}{}
+
+\input{sections/01_aboutme}
+
+\input{sections/02_material}
+
+\input{sections/03_evaluation}
+
+\input{sections/04_warnings}
+
+\begin{frame}{}
+  \centering \Large
+  \textbf{? \& | !}
+\end{frame}
+
+\end{document}
